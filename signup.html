@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+
+    <script src="/js/validation.js" defer></script>
+</head>
+<body id="signup">
+    
+    <h1 id="log">Signup</h1>
+    
+    <form id="signup">      <!--action="process-signup.php" method="post"  novalidate>  -->
+        <div>
+            <label for="name">Name</label>                                                  
+            <input type="text" id="name" name="name">
+        </div>
+        
+        <div>
+            <label for="email">email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        
+        <div>
+            <label for="password_confirmation">Repeat password</label>
+            <input type="password" id="password_confirmation" name="password_confirmation">
+        </div>
+        
+        <button>Sign up</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#signup").submit(function(e){
+                $a.ajax({
+                    type:"POST",
+                    url: "process-signup.php",
+                    data: $("#signup").serialize(),
+
+                })
+            })
+            e.preventDeafault();
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
